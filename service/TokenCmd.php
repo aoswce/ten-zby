@@ -29,7 +29,7 @@ abstract class TokenCmd
         //var_dump($this->req);
         //var_dump($data);
         //exit(0);
-        Log::info($this->req);
+        //Log::info($this->req);
         return is_null($this->req) ? false : true;
     }
 
