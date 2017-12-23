@@ -105,7 +105,8 @@ class ReportLiveRoomInfoCmd extends TokenCmd
         $liveRecord->setVideoType($videotype);
 
         if (!isset($room['appid'])) {
-            return new CmdResp(ERR_REQ_DATA, 'Lack of appid.');
+            $room['appid'] = DEFAULT_SDK_APP_ID;
+            //return new CmdResp(ERR_REQ_DATA, 'Lack of appid.');
         }
         if (!is_string($room['appid'])) {
             if (!is_int($room['appid'])) {
