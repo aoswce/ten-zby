@@ -54,10 +54,10 @@ abstract class TokenCmd
             return new CmdResp(ERR_REQ_JSON, 'HTTP Request Json Parse Error');
         }
 
-        if (empty($this->req['token'][0])) {
+        if (empty($this->req['token'])) {
             return new CmdResp(ERR_REQ_DATA, 'Lack of token');
         }
-        if (!is_string($this->req['token'][0])) {
+        if (!is_string($this->req['token'])) {
             return new CmdResp(ERR_REQ_DATA, ' Invalid token');
         }
 
