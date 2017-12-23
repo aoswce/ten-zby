@@ -19,6 +19,7 @@ abstract class TokenCmd
     private function loadJsonReq()
     {
         $data = file_get_contents('php://input');
+        Log::info($data);
         if (empty($data)) {
             $this->req = array();
             return true;
@@ -28,7 +29,7 @@ abstract class TokenCmd
         //var_dump($this->req);
         //var_dump($data);
         //exit(0);
-        Log::info($data);
+        Log::info($this->req);
         return is_null($this->req) ? false : true;
     }
 
@@ -53,10 +54,10 @@ abstract class TokenCmd
             return new CmdResp(ERR_REQ_JSON, 'HTTP Request Json Parse Error');
         }
 
-        if (empty($this->req['token'][0])) {
+        if (empty($this->req['token'])) {
             return new CmdResp(ERR_REQ_DATA, 'Lack of token');
         }
-        if (!is_string($this->req['token'][0])) {
+        if (!is_string($this->req['token'])) {
             return new CmdResp(ERR_REQ_DATA, ' Invalid token');
         }
 
