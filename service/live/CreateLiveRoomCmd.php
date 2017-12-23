@@ -130,7 +130,9 @@ class CreateLiveRoomCmd extends TokenCmd
      *        time 过期时间 sample 2016-11-12 12:00:00
      * @return String url */
     private function getPushUrl($bizId, $streamId, $key = null, $time = null){
-
+        $livecode = "";
+        $txSecret = "";
+        $ext_str = "";
         if($key && $time){
             $txTime = strtoupper(base_convert(strtotime($time),10,16));
             //txSecret = MD5( KEY + livecode + txTime )
