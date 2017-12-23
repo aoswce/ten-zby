@@ -19,7 +19,7 @@ abstract class TokenCmd
     private function loadJsonReq()
     {
         $data = file_get_contents('php://input');
-        Log::info($data);
+        //Log::info($data);
         if (empty($data)) {
             $this->req = array();
             return true;
