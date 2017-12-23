@@ -193,6 +193,62 @@ groupid|String|选填|IM群组id
 * 房间id和群组id由服务器分配，保证唯一性(与id有对应关系)
 
 
+### 三(1) 创建房间同时上报房间信息
+
+申请创建直播房间，返回房间id和群组id
+
+* 请求URL  
+ 
+```html
+index.php?svc=live&cmd=create
+```
+* request字段示例
+
+```json
+ {  "token":"[token]",
+	"type":"live",
+	"room":{
+            "title": "标题",
+            "roomnum":18,
+            "type":"live",
+            "groupid":"18",
+            "cover":"http://cover.png",
+            "appid": 1400019352,
+            "device":0,
+            "videotype":0
+           }
+ }
+```
+
+字段  | 类型  | 选项 | 说明
+:-----: | :-----: | :-----: | :-----: 
+token|String|必填|用户token
+type|String|必填|房间类型(live:直播)
+room|Object|必填|房间信息
+
+* response字段示例
+
+```json
+ {  "errorCode": 0,
+	"errorInfo": "",
+	"data":{
+   		"roomnum": 123,
+		"groupid": "123"
+	}
+ }
+
+```
+
+字段  | 类型  | 选项 | 说明
+:-----: | :-----: | :-----: | :-----: 
+roomnum|Integer|必填|房间id(服务器分配的唯一房间id)
+groupid|String|选填|IM群组id
+
+* 房间id和群组id由服务器分配，保证唯一性(与id有对应关系)
+
+
+
+
 ### 四 上报创建房间结果
 
 * 在腾讯视频云创建房间成功后上报房间信息

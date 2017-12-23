@@ -31,6 +31,9 @@ class CreateLiveRoomCmd extends TokenCmd
         {
              return new CmdResp(ERR_REQ_DATA, ' Invalid type');
         }
+        if(!isset($this->req['root'])){
+            return new CmdResp(ERR_REQ_DATA,'Lack of room info');
+        }
         
         $this->avRoom = new AvRoom($this->user);
         return new CmdResp(ERR_SUCCESS, '');
@@ -88,6 +91,14 @@ class CreateLiveRoomCmd extends TokenCmd
             return new CmdResp(ERR_SERVER, 'Server internal error:insert record into interactroom fail'); 
         }
 
+        //调用上报创建房间结果的数据
+        $info = new ReportLiveRoomInfoCmd();
+        $resp = $info->execute();
+        $res = $resp->toArray();
+
+        if(intval($ret['errCode']) > 0){
+            return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
+        }
         return new CmdResp(ERR_SUCCESS, '', array('roomnum' => (int)$id, 'groupid' => (string)$id));
     }    
 }

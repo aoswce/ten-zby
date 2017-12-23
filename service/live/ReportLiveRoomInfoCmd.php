@@ -22,7 +22,7 @@ class ReportLiveRoomInfoCmd extends TokenCmd
     //AvRoom
     private $av_room;
     const URL = 'liveplay.myqcloud.com/live/';
-    const BIZID = '123456';
+    const BIZID = '17972';
 
     public function parseInput()
     {
