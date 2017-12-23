@@ -29,7 +29,8 @@ abstract class TokenCmd
         //var_dump($data);
         //exit(0);
 
-        new CmdResp(ERR_REQ_JSON, $data);
+        //$rep = new CmdResp(ERR_REQ_JSON, $data);
+        Log::info($data);
         return is_null($this->req) ? false : true;
     }
 
@@ -55,7 +56,7 @@ abstract class TokenCmd
         }
 
         if (empty($this->req['token'])) {
-            return new CmdResp(ERR_REQ_DATA, 'Lack of token');
+            return new CmdResp(ERR_REQ_DATA, 'Lack-2 of token');
         }
         if (!is_string($this->req['token'])) {
             return new CmdResp(ERR_REQ_DATA, ' Invalid token');
