@@ -110,12 +110,13 @@ class CreateLiveRoomCmd extends TokenCmd
         //}
         $expire = strtotime("Y-m-d H:i:s",date("+1 day"));
         $streamId = $id.substr(md5($id),0,9);
+        $pushUrl = $this->getPushUrl(DEFAULT_SDK_APP_BIZ,$streamId,APP_SECURITY_KEY,$expire);
         return new CmdResp(
             ERR_SUCCESS, '',
             array(
                 'roomnum' => (int)$id,
                 'groupid' => (string)$id,
-                'push'=>getPushUrl(DEFAULT_SDK_APP_BIZ,$streamId,APP_SECURITY_KEY,$expire)
+                'push'=>$pushUrl
             )
         );
     }
