@@ -26,7 +26,7 @@ class GetLiveStreamListCmd extends TokenCmd
         }
         else
         {
-            $this->appid = 0;
+            $this->appid = DEFAULT_SDK_APP_ID;
         }
 
         if (!isset($this->req['index']))
