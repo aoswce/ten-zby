@@ -1,0 +1,204 @@
+<2017-12-23 10:03:12|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-23 10:03:12|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-23 10:07:17|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-23 10:07:17|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-23 10:07:55|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-23 10:07:55|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-23 10:28:36|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-23 10:28:36|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":""}
+<2017-12-23 10:32:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456", "appid": 1255625061}
+<2017-12-23 10:32:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":10004,"errorInfo":"Register user id existed"}
+<2017-12-23 10:32:59|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid": 1255625061}
+<2017-12-23 10:32:59|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":10003,"errorInfo":"Invalid appid"}
+<2017-12-23 10:41:08|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 10:41:08|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":10003,"errorInfo":"Invalid appid"}
+<2017-12-23 11:17:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 11:17:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":10003,"errorInfo":"Invalid appid"}
+<2017-12-23 11:27:45|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 11:27:45|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error: gen sig fail"}
+<2017-12-23 11:28:38|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 11:28:38|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error: gen sig fail"}
+<2017-12-23 11:42:27|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 11:42:27|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:06:53|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:06:53|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:07:36|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:07:37|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 1 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:07:44|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:07:44|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:08:22|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:08:22|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:09:10|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:09:10|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:11:29|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:11:29|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server error-g: gen sig fail"}
+<2017-12-23 12:13:12|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:13:12|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"userSig":"eJxlz1FPgzAQwPF3PkXDK8aVsmIw8cEhyzDgUNTw1hA4sDpaUtqhM353FZeI8V7-v9zl3i2EkH2f5KdlVUkjNNNvPdjoHNnYPvmNfc9rVmrmqfpfhNeeK2Blo0FN0aWUEoznhtcgNG-4UZgB1F8w1C9suvKzgVDqE4p9d054O8U0egjj2xDc-HlHU7nYOOH*Ckxcp7vCqfAiEtunSp5Jg-3u8W612bZxW1xfZt1ahCQY22w8lBFJx3DZcFGsEuWlgYyc6CYx6zyTF7OTmndwfMldYky8gMzqHtTApZgAwV*EePh7bOvD*gRD9lyb","token":"dXNlcjAwMDAK"}}
+<2017-12-23 12:14:20|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:14:20|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"userSig":"eJxlz1FPgzAQwPF3PkXDK8aVsmIw8cEhyzDgUNTw1hA4sDpaUtqhM353FZeI8V7-v9zl3i2EkH2f5KdlVUkjNNNvPdjoHNnYPvmNfc9rVmrmqfpfhNeeK2Blo0FN0aWUEoznhtcgNG-4UZgB1F8w1C9suvKzgVDqE4p9d054O8U0egjj2xDc-HlHU7nYOOH*Ckxcp7vCqfAiEtunSp5Jg-3u8W612bZxW1xfZt1ahCQY22w8lBFJx3DZcFGsEuWlgYyc6CYx6zyTF7OTmndwfMldYky8gMzqHtTApZgAwV*EePh7bOvD*gRD9lyb","token":"dXNlcjAwMDE1MTQwMDIzOTIK"}}
+<2017-12-23 12:14:40|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = login, data:
+	{ "id":"user000", "pwd": "123456", "appid":"1255625061"}
+<2017-12-23 12:14:40|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = login, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"userSig":"eJxlz1FPgzAQwPF3PkXDK8aVsmIw8cEhyzDgUNTw1hA4sDpaUtqhM353FZeI8V7-v9zl3i2EkH2f5KdlVUkjNNNvPdjoHNnYPvmNfc9rVmrmqfpfhNeeK2Blo0FN0aWUEoznhtcgNG-4UZgB1F8w1C9suvKzgVDqE4p9d054O8U0egjj2xDc-HlHU7nYOOH*Ckxcp7vCqfAiEtunSp5Jg-3u8W612bZxW1xfZt1ahCQY22w8lBFJx3DZcFGsEuWlgYyc6CYx6zyTF7OTmndwfMldYky8gMzqHtTApZgAwV*EePh7bOvD*gRD9lyb","token":"dXNlcjAwMDE1MTQwMDI0NjAK"}}
+<2017-12-23 12:16:25|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}
+<2017-12-23 12:16:42|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}
+<2017-12-23 12:17:15|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}
+<2017-12-23 12:17:59|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}
+<2017-12-23 12:19:02|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}
+<2017-12-23 12:20:46|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 12:20:46|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 12:22:50|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 12:22:50|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 12:23:02|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 12:23:02|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 12:26:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = create, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live" }
+<2017-12-23 12:26:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = create, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"roomnum":1,"groupid":"1"}}
+<2017-12-23 12:26:41|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 12:26:41|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 12:28:26|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = create, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live" }
+<2017-12-23 12:28:26|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = create, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"roomnum":2,"groupid":"2"}}
+<2017-12-23 13:25:31|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 13:25:31|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 13:29:51|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"live",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 13:29:51|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 13:30:18|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 13:30:18|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 13:50:08|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = live, cmd = roomlist, data:
+	 { 	"token":"dXNlcjAwMDE1MTQwMDI0NjAK", 	"type":"",	"index":0,	"size":10,	"appid": 1255625061 }
+<2017-12-23 13:50:08|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = live, cmd = roomlist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":"","data":{"total":0,"rooms":[]}}
+<2017-12-23 15:37:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000枯", "pwd": "123456"}
+<2017-12-23 15:37:34|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":0,"errorInfo":""}
+<2017-12-23 15:56:07|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = Unknown, cmd = Unknown, time = 0 secs, data:
+	{"errorCode":10001,"errorInfo":"Invalid request."}

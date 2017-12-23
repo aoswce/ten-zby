@@ -1,0 +1,24 @@
+<2017-12-22 22:25:33|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-22 22:25:33|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-22 22:26:01|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-22 22:26:01|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-22 22:26:14|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-22 22:26:14|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
+<2017-12-22 22:33:11|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	request svc = account, cmd = regist, data:
+	{ "id":"user000", "pwd": "123456"}
+<2017-12-22 22:33:11|INFO|file:/var/html/ten-yzb/index.php|function:handle>
+	response svc = account, cmd = regist, time = 0 secs, data:
+	{"errorCode":90000,"errorInfo":"Server inner error, Regist fail!"}
