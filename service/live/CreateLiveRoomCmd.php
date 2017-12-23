@@ -39,6 +39,7 @@ class CreateLiveRoomCmd extends TokenCmd
         {
             return new CmdResp(ERR_REQ_DATA, 'Lack of Token');
         }
+
         if(!isset($this->req['room'])){
             return new CmdResp(ERR_REQ_DATA,'Lack of room info');
         }

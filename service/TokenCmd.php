@@ -28,6 +28,8 @@ abstract class TokenCmd
         //var_dump($this->req);
         //var_dump($data);
         //exit(0);
+
+        new CmdResp(ERR_REQ_JSON, $data);
         return is_null($this->req) ? false : true;
     }
 

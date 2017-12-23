@@ -54,11 +54,12 @@ class ReportLiveRoomInfoCmd extends TokenCmd
 
         // 检查type-必填
         if (!isset($room['type'])) {
-            return new CmdResp(ERR_REQ_DATA, 'Lack of type.');
+            //return new CmdResp(ERR_REQ_DATA, 'Lack of type.');
+            $room['type'] = "live";
         }
-        if (!is_string($room['type'])) {
+        /*if (!is_string($room['type'])) {
             return new CmdResp(ERR_REQ_DATA, 'invalid type.');
-        }
+        }*/
         $liveRecord->setRoomType($room['type']);
 
         // 检查 av room id-必填

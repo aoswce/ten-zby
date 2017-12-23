@@ -233,7 +233,8 @@ room|Object|必填|房间信息
 	"errorInfo": "",
 	"data":{
    		"roomnum": 123,
-		"groupid": "123"
+		"groupid": "123",
+		"push": "rtmp://17972.livepush.myqcloud.com/live/17972_f15cde2ce8?bizid=17972&txSecret=9aebd0252b3bfb614815e28f059feef9&txTime=5A3E7D7F"
 	}
  }
 
