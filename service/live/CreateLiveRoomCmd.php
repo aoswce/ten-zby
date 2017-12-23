@@ -23,15 +23,23 @@ class CreateLiveRoomCmd extends TokenCmd
 
     public function parseInput()
     {
+        /**
+         * 不在进行判断type
         if (!isset($this->req['type']))
         {
-            return new CmdResp(ERR_REQ_DATA, 'Lack of type');
+        return new CmdResp(ERR_REQ_DATA, 'Lack of type');
         }
         if (!is_string($this->req['type']))
         {
-             return new CmdResp(ERR_REQ_DATA, ' Invalid type');
+        return new CmdResp(ERR_REQ_DATA, ' Invalid type');
         }
-        if(!isset($this->req['root'])){
+
+         */
+        if (!isset($this->req['token']))
+        {
+            return new CmdResp(ERR_REQ_DATA, 'Lack of Token');
+        }
+        if(!isset($this->req['room'])){
             return new CmdResp(ERR_REQ_DATA,'Lack of room info');
         }
         
@@ -99,6 +107,40 @@ class CreateLiveRoomCmd extends TokenCmd
         if(intval($ret['errCode']) > 0){
             return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
         }
-        return new CmdResp(ERR_SUCCESS, '', array('roomnum' => (int)$id, 'groupid' => (string)$id));
-    }    
+        $expire = strtotime("Y-m-d H:i:s",date("+1 day"));
+        $streamId = $id.substr(md5($id),0,9);
+        return new CmdResp(
+            ERR_SUCCESS, '',
+            array(
+                'roomnum' => (int)$id,
+                'groupid' => (string)$id,
+                'push'=>getPushUrl(DEFAULT_SDK_APP_BIZ,$streamId,APP_SECURITY_KEY,$expire)
+            )
+        );
+    }
+
+    /**
+     * 获取推流地址
+     * 如果不传key和过期时间，将返回不含防盗链的url
+     * @param bizId 您在腾讯云分配到的bizid
+     *        streamId 您用来区别不同推流地址的唯一id
+     *        key 安全密钥
+     *        time 过期时间 sample 2016-11-12 12:00:00
+     * @return String url */
+    private function getPushUrl($bizId, $streamId, $key = null, $time = null){
+
+        if($key && $time){
+            $txTime = strtoupper(base_convert(strtotime($time),10,16));
+            //txSecret = MD5( KEY + livecode + txTime )
+            //livecode = bizid+"_"+stream_id  如 8888_test123456
+            $livecode = $bizId."_".$streamId; //直播码
+            $txSecret = md5($key.$livecode.$txTime);
+            $ext_str = "?".http_build_query(array(
+                    "bizid"=> $bizId,
+                    "txSecret"=> $txSecret,
+                    "txTime"=> $txTime
+                ));
+        }
+        return "rtmp://".$bizId.".livepush.myqcloud.com/live/".$livecode.(isset($ext_str) ? $ext_str : "");
+    }
 }
