@@ -205,18 +205,14 @@ index.php?svc=live&cmd=create
 * request字段示例
 
 ```json
- {  "token":"[token]",
-	"type":"live",
+ {  
+    "token":"[token]",
 	"room":{
             "title": "标题",
-            "roomnum":18,
-            "type":"live",
-            "groupid":"18",
             "cover":"http://cover.png",
-            "appid": 1400019352,
             "device":0,
             "videotype":0
-           }
+     }
  }
 ```
 

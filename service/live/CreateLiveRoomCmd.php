@@ -101,13 +101,13 @@ class CreateLiveRoomCmd extends TokenCmd
         }
 
         //调用上报创建房间结果的数据
-        $info = new ReportLiveRoomInfoCmd();
-        $resp = $info->execute();
-        $res = $resp->toArray();
+        //$info = new ReportLiveRoomInfoCmd();
+        //$resp = $info->execute();
+        //$res = $resp->toArray();
 
-        if(intval($ret['errCode']) > 0){
-            return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
-        }
+        //if(intval($ret['errCode']) > 0){
+        //    return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
+        //}
         $expire = strtotime("Y-m-d H:i:s",date("+1 day"));
         $streamId = $id.substr(md5($id),0,9);
         return new CmdResp(
