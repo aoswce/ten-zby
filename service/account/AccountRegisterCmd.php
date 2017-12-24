@@ -94,7 +94,7 @@ class AccountRegisterCmd extends Cmd
             }
         }
         echo "==============User-Sig0:=================================";
-        var_dump($signature);
+        var_dump($signature,$private_pem_path,$identifier);
         $usersig = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
 
         echo "==============User-Sig1:=================================";
