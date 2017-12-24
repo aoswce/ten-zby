@@ -116,6 +116,8 @@ class TimRestAPI extends TimRestInterface
 			. ' ' . escapeshellarg($this->sdkappid)
 			. ' ' .escapeshellarg($identifier);
 		$ret = exec($command, $out, $status);
+		echo "===============gen==============";
+		var_dump($out);
 		if( $status == -1)
 		{
 			return null;
