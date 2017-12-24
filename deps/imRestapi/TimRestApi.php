@@ -109,7 +109,7 @@ class TimRestAPI extends TimRestInterface
 	 */
 	public function generate_user_sig($identifier, $expiry_after, $protected_key_path, $tool_path)
 	{
-	
+	    /*
 		# 这里需要写绝对路径，开发者根据自己的路径进行调整
 		$command = escapeshellarg($tool_path)
 			. ' '. escapeshellarg($protected_key_path)
@@ -124,7 +124,69 @@ class TimRestAPI extends TimRestInterface
 		}
 		$this->usersig = $out[0];
 		return $out;
+	    */
+        // 创建临时sig文件
+        $sig = $this->mktemp();
+        if(!$sig) {
+            return null;
+        }
+
+        // 生成sig
+        $cmd = DEPS_PATH . '/bin/tls_licence_tools'
+            . ' ' . 'gen'
+            . ' ' . escapeshellarg($protected_key_path)
+            . ' ' . escapeshellarg($sig)
+            . ' ' . escapeshellarg($this->sdkappid)
+            . ' ' . escapeshellarg($identifier);
+        $ret = exec($cmd, $out, $status);
+        if ($status != 0)
+        {
+            return null;
+        }
+
+        // 读取sig
+        $out=array();
+        $cmd = 'cat ' . ' ' . escapeshellarg($sig);
+        $ret = exec($cmd, $out, $status);
+
+        $this->rmtemp($sig);
+
+        if ($status != 0)
+        {
+            return null;
+        }
+
+        return $out[0];
 	}
+
+    /* 功能：删除临时sig文件
+     * 说明：使用工具rm强制删除在deps/sig目录下指定的临时文件
+     */
+    private function rmtemp($tmp)
+    {
+        $cmd = 'rm -f ' . $tmp;
+        $ret = exec($cmd, $out, $status);
+        if ($status != 0)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    /* 功能：创建临时sig文件
+     * 说明：使用工具mktemp在deps/sig目录下创建临时文件sxb_sig.XXXXXXXXXX
+     *        成功返回临时文件的绝对路径，失败返回null
+     */
+    private function mktemp()
+    {
+        $cmd = 'mktemp -t -p ' . DEPS_PATH . '/sig sxb_sig.XXXXXXXXXX';
+        $ret = exec($cmd, $out, $status);
+        if ($status != 0)
+        {
+            return null;
+        }
+        return $out[0];
+    }
 	
 	/**
 	 * 托管模式设置用户凭证
