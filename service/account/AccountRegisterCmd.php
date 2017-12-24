@@ -74,7 +74,7 @@ class AccountRegisterCmd extends Cmd
         $sdkappid = $app_config["sdkappid"];
         $identifier = $app_config["identifier"];
 
-        $private_pem_path = $app_config["private_pem_path"];
+        $private_pem_path = DEPS_PATH .$app_config["private_pem_path"];
         $user_sig = $app_config["user_sig"];
 
         $api->init($sdkappid, $identifier);
