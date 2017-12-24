@@ -75,6 +75,23 @@ class AccountRegisterCmd extends Cmd
         $user_sig = $app_config["user_sig"];
 
         $api->init($sdkappid, $identifier);
+        if(is_64bit()){
+            if(PATH_SEPARATOR==':'){
+                $signature = "signature/linux-signature64";
+            }else{
+                $signature = "signature\\windows-signature64.exe";
+            }
+
+        }else{
+            if(PATH_SEPARATOR==':')
+            {
+                $signature = "signature/linux-signature32";
+            }else{
+                $signature = "signature\\windows-signature32.exe";
+            }
+        }
+        $usersig = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
+        var_dump("User-Sig:",$user_sig);
         $ret = $api->account_import($uid,$nick,$face_url);
         return $ret;
     }
