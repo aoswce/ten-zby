@@ -1483,7 +1483,7 @@ class TimRestAPI extends TimRestInterface
 				"GroupId" => $group_id,
 				"MsgList" => $msg_list,
             );
-        var_dump($msg);  
+        //var_dump($msg);
 		#将消息序列化为json串
 		$req_data = json_encode($msg);
 
