@@ -11,6 +11,9 @@ require_once ROOT_PATH . '/ErrorNo.php';
 require_once MODEL_PATH . '/NewLiveRecord.php';
 require_once MODEL_PATH . '/InteractAvRoom.php';
 
+define('DEFAULT_SDK_APP_ID', '1255625061'); //默认APPID
+
+
 class GetLiveRoomListCmd extends TokenCmd
 {
     private $appid;
