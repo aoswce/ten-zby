@@ -86,17 +86,17 @@ class AccountLoginCmd extends Cmd
         $userSig = $account->getUserSig();
         if(empty($userSig))
         {
-            $userSig = $account->genUserSig($this->appid, $this->privatekey);
+            $userSig = $account->genUserSig(DEFAULT_IM_SDK_APP_ID, $this->privatekey);
             // 更新对象account的成员userSig
 	    //var_dump($userSig,"reSig");
             $account->setUserSig($userSig);
         } 
         else 
         {
-            $ret = $account->verifyUserSig($this->appid, $this->publickey);
+            $ret = $account->verifyUserSig(DEFAULT_IM_SDK_APP_ID, $this->publickey);
             if($ret == 1) //过期重新生成
             {
-                $userSig = $account->genUserSig($this->appid, $this->privatekey);
+                $userSig = $account->genUserSig(DEFAULT_IM_SDK_APP_ID, $this->privatekey);
                 // 更新对象account的成员userSig
                 $account->setUserSig($userSig);
             }

@@ -17,4 +17,6 @@ define('AUTHORIZATION_KEY', serialize([
     'Your_SDK_APP_ID' => 'Your_Authrization_Key'
 ])); //权限密钥表
 
+define('DEFAULT_IM_SDK_APP_ID', '1400056252'); //默认APPID
+
 ?>
