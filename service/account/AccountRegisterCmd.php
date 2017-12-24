@@ -10,7 +10,7 @@ require_once SERVICE_PATH . '/Cmd.php';
 require_once SERVICE_PATH . '/CmdResp.php';
 require_once ROOT_PATH . '/ErrorNo.php';
 require_once MODEL_PATH . '/Account.php';
-require_once IM_PATH . 'TimRestApi.php';
+require_once IM_PATH . '/TimRestApi.php';
 
 class AccountRegisterCmd extends Cmd
 {
