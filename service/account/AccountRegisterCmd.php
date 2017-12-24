@@ -91,8 +91,11 @@ class AccountRegisterCmd extends Cmd
             }
         }
         $usersig = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
-        var_dump("User-Sig:",$user_sig);
+        echo "==============User-Sig:=================================";
+        var_dump($usersig);
         $ret = $api->account_import($uid,$nick,$face_url);
+        echo "==============User-Ret:=================================";
+        var_dump($ret);
         return $ret;
     }
 }
