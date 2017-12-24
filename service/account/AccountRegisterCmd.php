@@ -51,16 +51,17 @@ class AccountRegisterCmd extends Cmd
     {
         $errorMsg = '';
         $ret = $this->account->register($errorMsg);
+        $re = array();
         if($ret == 0){
             $userid = $this->account->getUser();
             $ret = $this->importAccountToIM($userid);
-            $re = array();
+
             foreach ($ret as $k=>$v){
                 $re[ucfirst($k)] = $v;
             }
             return $re;
         }
-        return new CmdResp($ret, $errorMsg);
+        return new CmdResp($re, $errorMsg);
     }
 
     public function importAccountToIM($uid,$nick='',$face_url=''){
@@ -93,17 +94,17 @@ class AccountRegisterCmd extends Cmd
                 $signature = IM_PATH."\\signature\\windows-signature32.exe";
             }
         }
-        echo "==============User-Sig0:=================================";
-        var_dump($signature,$private_pem_path,$identifier);
+        //echo "==============User-Sig0:=================================";
+        //var_dump($signature,$private_pem_path,$identifier);
         $usersig = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
 
-        echo "==============User-Sig1:=================================";
-        var_dump($usersig);
-        echo "==============User-Sig2:=================================";
+        //echo "==============User-Sig1:=================================";
+        //var_dump($usersig);
+        //echo "==============User-Sig2:=================================";
         //var_dump($api->usersig);
         $ret = $api->account_import($uid,$nick,$face_url);
-        echo "==============User-Ret:=================================";
-        var_dump($ret);
+        //echo "==============User-Ret:=================================";
+        //var_dump($ret);
         return $ret;
     }
 }
