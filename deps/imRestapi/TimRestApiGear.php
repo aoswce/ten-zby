@@ -83,17 +83,17 @@
 		 */
 		if(is_64bit()){
 			if(PATH_SEPARATOR==':'){
-				$signature = "signature/linux-signature64";
+				$signature = IM_PATH."/signature/linux-signature64";
 			}else{
-				$signature = "signature\\windows-signature64.exe";
+				$signature = IM_PATH."\\signature\\windows-signature64.exe";
 			}
 			
 		}else{
 			if(PATH_SEPARATOR==':')
 			{
-				$signature = "signature/linux-signature32";
+				$signature = IM_PATH."/signature/linux-signature32";
 			}else{
-				$signature = "signature\\windows-signature32.exe";
+				$signature = IM_PATH."\\signature\\windows-signature32.exe";
 			}
 		}
 		$ret = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
