@@ -57,7 +57,7 @@ class AccountRegisterCmd extends Cmd
             $ret = $this->importAccountToIM($userid);
 
             foreach ($ret as $k=>$v){
-                $re[ucfirst($k)] = $v;
+                $re[lcfirst($k)] = $v;
             }
             return new CmdResp($re['errorCode'],$re['errorInfo']);
         }
