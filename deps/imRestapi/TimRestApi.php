@@ -38,7 +38,7 @@ class TimRestAPI extends TimRestInterface
 	 * $param bool $print_flag 是否打印请求，默认为打印
 	 * @return string $out 返回的签名字符串
 	 */
-	public function api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = true)
+	public function api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = false)
 	{   
 		//$req_tmp用来做格式化输出
 		$req_tmp = json_decode($req_data, true);
@@ -73,7 +73,7 @@ class TimRestAPI extends TimRestInterface
 	 * $param bool $print_flag 是否打印请求，默认为打印
 	 * @return string $out 返回的签名字符串
 	 */
-	public function multi_api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = true)
+	public function multi_api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = false)
 	{   
 		
 		//$req_tmp用来做格式化控制台输出,同时作为多路访问需要的数组结构
