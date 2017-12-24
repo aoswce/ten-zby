@@ -108,8 +108,12 @@ class CreateLiveRoomCmd extends TokenCmd
         //if(intval($ret['errCode']) > 0){
         //    return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
         //}
+        $room = $this->avRoom->getAvRoom();
+        Log::info("Main:".json_encode($room));
+        $streamId = $room['main_md5'];
+        Log::info($streamId);
         $expire = date('Y-m-d H:i:s',strtotime("+1 day"));
-        $streamId = $id.substr(md5($id),0,9);
+        //$streamId = $id.substr(md5($id),0,9);
         $pushUrl = $this->getPushUrl(DEFAULT_SDK_APP_BIZ,$streamId,APP_SECURITY_KEY,$expire);
         return new CmdResp(
             ERR_SUCCESS, '',
@@ -145,6 +149,8 @@ class CreateLiveRoomCmd extends TokenCmd
                     "txTime"=> $txTime
                 ));
         }
-        return "rtmp://".$bizId.".livepush.myqcloud.com/live/".$livecode.(isset($ext_str) ? $ext_str : "");
+        $url = "rtmp://".$bizId.".livepush.myqcloud.com/live/".$livecode.(isset($ext_str) ? $ext_str : "");
+        Log::info("Pushurl:".$url);
+        return $url;
     }
 }

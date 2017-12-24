@@ -147,6 +147,35 @@ class AvRoom
         return $this->id;
     }
 
+    public function getAvRoom($id){
+        $dbh = DB::getPDOHandler();
+        if (is_null($dbh))
+        {
+            return '';
+        }
+        try
+        {
+            $sql = 'select * from t_av_room where id = :id';
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+            $result = $stmt->execute();
+            if (!$result)
+            {
+                return '';
+            }
+            $row = $stmt->fetch();
+            if (empty($row))
+            {
+                return '';
+            }
+            return $row;
+        }
+        catch (PDOException $e)
+        {
+            return '';
+        }
+    }
+
     public function exitAvRoom()
     {
         $dbh = DB::getPDOHandler();
