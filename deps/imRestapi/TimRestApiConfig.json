@@ -1,6 +1,6 @@
 {
 	"sdkappid":"1400056252",
 	"identifier":"sgcadmin",
-	"private_pem_path":"../keys/1255625061/private_key",//../keys/1255625061/private.pem"
+	"private_pem_path":"../keys/1255625061/private_key",
 	"user_sig":""
 }
