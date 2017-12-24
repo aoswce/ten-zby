@@ -258,7 +258,8 @@ index.php?svc=live&cmd=reportroom
 * request字段示例
 
 ```json
- {  "token": "[token]",
+ {  
+    "token": "[token]",
 	"room":{
    		"title": "标题",
    		"roomnum":18,
