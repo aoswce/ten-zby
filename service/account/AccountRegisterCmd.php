@@ -67,6 +67,7 @@ class AccountRegisterCmd extends Cmd
         $json_config = file_get_contents($filename);
         var_dump($json_config);
         $app_config = json_decode($json_config, true);
+        var_dump($app_config);
         $sdkappid = $app_config["sdkappid"];
         $identifier = $app_config["identifier"];
 
