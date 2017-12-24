@@ -156,6 +156,7 @@ class TimRestAPI extends TimRestInterface
             return null;
         }
         $this->usersig = $out[0];
+
         return $out[0];
 	}
 
