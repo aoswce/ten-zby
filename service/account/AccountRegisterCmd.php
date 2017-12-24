@@ -65,6 +65,7 @@ class AccountRegisterCmd extends Cmd
         #读取app配置文件
         $filename = IM_PATH."/TimRestApiConfig.json";
         $json_config = file_get_contents($filename);
+        var_dump($json_config);
         $app_config = json_decode($json_config, true);
         $sdkappid = $app_config["sdkappid"];
         $identifier = $app_config["identifier"];
