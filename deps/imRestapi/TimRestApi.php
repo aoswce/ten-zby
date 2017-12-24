@@ -1445,7 +1445,6 @@ class TimRestAPI extends TimRestInterface
 
     function group_import_group_msg($group_id, $from_account, $text)
     {
-        
         #构造高级接口所需参数
 
         //构造MsgBody

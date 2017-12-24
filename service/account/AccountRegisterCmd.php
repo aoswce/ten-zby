@@ -59,7 +59,7 @@ class AccountRegisterCmd extends Cmd
             foreach ($ret as $k=>$v){
                 $re[ucfirst($k)] = $v;
             }
-            return new CmdResp($re,$re['errorInfo']);
+            return new CmdResp($re['errorCode'],$re['errorInfo']);
         }
         return new CmdResp($re, $errorMsg);
     }
