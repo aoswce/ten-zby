@@ -100,7 +100,7 @@ class AccountRegisterCmd extends Cmd
         echo "==============User-Sig1:=================================";
         var_dump($usersig);
         echo "==============User-Sig2:=================================";
-        var_dump($api->usersig);
+        //var_dump($api->usersig);
         $ret = $api->account_import($uid,$nick,$face_url);
         echo "==============User-Ret:=================================";
         var_dump($ret);
