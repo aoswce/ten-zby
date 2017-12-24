@@ -104,7 +104,7 @@ class AccountRegisterCmd extends Cmd
         //var_dump($api->usersig);
         $ret = $api->account_import($uid,$nick,$face_url);
         //echo "==============User-Ret:=================================";
-        var_dump($ret);
+        //var_dump($ret);
         return $ret;
     }
 }
