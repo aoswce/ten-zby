@@ -54,8 +54,11 @@ class AccountRegisterCmd extends Cmd
         if($ret == 0){
             $userid = $this->account->getUser();
             $ret = $this->importAccountToIM($userid);
-            var_dump($ret);
-            return $ret;
+            $re = array();
+            foreach ($ret as $k=>$v){
+                $re[ucfirst($k)] = $v;
+            }
+            return $re;
         }
         return new CmdResp($ret, $errorMsg);
     }
@@ -65,9 +68,9 @@ class AccountRegisterCmd extends Cmd
         #读取app配置文件
         $filename = IM_PATH."/TimRestApiConfig.json";
         $json_config = file_get_contents($filename);
-        var_dump($json_config);
+        //var_dump($json_config);
         $app_config = json_decode($json_config, true);
-        var_dump($app_config);
+        //var_dump($app_config);
         $sdkappid = $app_config["sdkappid"];
         $identifier = $app_config["identifier"];
 
@@ -90,9 +93,14 @@ class AccountRegisterCmd extends Cmd
                 $signature = "signature\\windows-signature32.exe";
             }
         }
+        echo "==============User-Sig0:=================================";
+        var_dump($api->usersig);
         $usersig = $api->generate_user_sig($identifier, '36000', $private_pem_path, $signature);
-        echo "==============User-Sig:=================================";
+
+        echo "==============User-Sig1:=================================";
         var_dump($usersig);
+        echo "==============User-Sig2:=================================";
+        var_dump($api->usersig);
         $ret = $api->account_import($uid,$nick,$face_url);
         echo "==============User-Ret:=================================";
         var_dump($ret);
