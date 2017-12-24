@@ -38,7 +38,7 @@ class TimRestAPI extends TimRestInterface
 	 * $param bool $print_flag 是否打印请求，默认为打印
 	 * @return string $out 返回的签名字符串
 	 */
-	public function api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = false)
+	public function api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = true)
 	{   
 		//$req_tmp用来做格式化输出
 		$req_tmp = json_decode($req_data, true);
@@ -48,7 +48,7 @@ class TimRestAPI extends TimRestInterface
             . "&sdkappid=" . $this->sdkappid
             . "&contenttype=" . $this->contenttype;
 		$url = $this->http_type . $this->im_yun_url . '/' . $this->version . '/' . $service_name . '/' .$cmd_name . '?' . $parameter;
-		
+		echo $url;
 		if($print_flag)
 		{
 			echo "Request Url:\n";
@@ -59,6 +59,7 @@ class TimRestAPI extends TimRestInterface
 			echo "\n";
 		}
 		$ret = $this->http_req('https', 'post', $url, $req_data);
+		var_dump($ret);
 		return $ret;
 
 	}   
@@ -73,7 +74,7 @@ class TimRestAPI extends TimRestInterface
 	 * $param bool $print_flag 是否打印请求，默认为打印
 	 * @return string $out 返回的签名字符串
 	 */
-	public function multi_api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = false)
+	public function multi_api($service_name, $cmd_name, $identifier, $usersig, $req_data, $print_flag = true)
 	{   
 		
 		//$req_tmp用来做格式化控制台输出,同时作为多路访问需要的数组结构
@@ -85,7 +86,7 @@ class TimRestAPI extends TimRestInterface
             . "&contenttype=" . $this->contenttype;
 
 		$url = $this->http_type . $this->im_yun_url . '/' . $this->version . '/' . $service_name . '/' .$cmd_name . '?' . $parameter;
-		
+		echo $url;
 		if($print_flag)
 		{
 			echo "Request Url:\n";
@@ -96,6 +97,7 @@ class TimRestAPI extends TimRestInterface
 			echo "\n";
         }
 		$ret = $this->http_req_multi('https', 'post', $url, $req_tmp);
+		var_dump($ret);
         return $ret;
 
 	}
