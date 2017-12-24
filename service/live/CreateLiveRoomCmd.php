@@ -108,7 +108,7 @@ class CreateLiveRoomCmd extends TokenCmd
         //if(intval($ret['errCode']) > 0){
         //    return new CmdResp(ERR_LIVE_NO_AV_ROOM_ID,'Server error :report root info fail!');
         //}
-        $room = $this->avRoom->getAvRoom();
+        $room = $this->avRoom->getAvRoom($id);
         Log::info("Main:".json_encode($room));
         $streamId = $room['main_md5'];
         Log::info($streamId);
