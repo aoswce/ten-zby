@@ -54,6 +54,7 @@ class AccountRegisterCmd extends Cmd
         if($ret == 0){
             $userid = $this->account->getUser();
             $ret = $this->importAccountToIM($userid);
+            var_dump($ret);
             return $ret;
         }
         return new CmdResp($ret, $errorMsg);
