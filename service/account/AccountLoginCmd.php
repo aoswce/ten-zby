@@ -84,6 +84,7 @@ class AccountLoginCmd extends Cmd
         
         // 获取sig
         $userSig = $account->getUserSig();
+        Log::info($userSig);
         if(empty($userSig))
         {
             $userSig = $account->genUserSig(DEFAULT_IM_SDK_APP_ID, $this->privatekey);
@@ -123,6 +124,7 @@ class AccountLoginCmd extends Cmd
         {
             return new CmdResp(ERR_SERVER, 'Server error');
         }
+
         $account->setToken($token);
         
         $account->setLoginTime(date('U'));
