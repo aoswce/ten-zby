@@ -7,7 +7,7 @@
 
 require_once dirname(__FILE__) . '/../Path.php';
 require_once LIB_PATH . '/db/DB.php';
-
+require_once MODEL_PATH.'/Cache.php';
 
 class Account
 {
