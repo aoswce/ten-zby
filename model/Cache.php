@@ -26,22 +26,22 @@ class Cache
 
     public static function getUserToken($uid){
         self::init();
-        $token = self::$redis->get($uid);
+        $token = self::$redis->get("token_".$uid);
 
         if(!empty($token)){
             Log::info("Exist token".$token);
             return $token;
        }else{
-            Log::info("Expired token".$token);
+            Log::info("Expired token!");
             return null;
         }
     }
 
     public static function setUserToken($uid,$token){
         self::init();
-        Log::info("Set new token".$token);
+        Log::info("Set new token ".$token);
 
-        self::$redis->set("Token_".$uid,$token,60*60*24);
+        self::$redis->set("token_".$uid,$token,60*60*24);
     }
 }
 
