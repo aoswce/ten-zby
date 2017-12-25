@@ -14,6 +14,10 @@ class Cache
 
     public function __Construct()
     {
+
+    }
+
+    protected function init(){
         $redis = new redis();
         $redis->connect('127.0.0.1', 6379);
         //$redis->auth('');
@@ -21,6 +25,7 @@ class Cache
     }
 
     public static function getUserToken($uid){
+        self::init();
         $token = self::$redis->get($uid);
 
         if(!empty($token)){
@@ -33,6 +38,7 @@ class Cache
     }
 
     public static function setUserToken($uid,$token){
+        self::init();
         Log::info("Set new token".$token);
 
         self::$redis->set("Token_".$uid,$token,60*60*24);
