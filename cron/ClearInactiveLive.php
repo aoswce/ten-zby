@@ -14,13 +14,13 @@ require_once MODEL_PATH . '/AvRoom.php';
 function clear()
 {
     // 删除90秒没有收到心跳包（LiveHostHearBeat）的直播记录
-    LiveRecord::deleteInactiveRecord(90);
+    LiveRecord::deleteInactiveRecord(120);
     // 删除90秒没有收到心跳包（HearBeat）的新版直播记录
-    NewLiveRecord::deleteInactiveRecord(90);
+    NewLiveRecord::deleteInactiveRecord(120);
     // 删除90秒没有收到心跳包（HearBeat）的房间中的主播记录  1-主播
-    InteractAvRoom::deleteDeathRoomMember(90, 1);
+    InteractAvRoom::deleteDeathRoomMember(120, 1);
 
-    AvRoom::finishInactiveRecord(90);
+    AvRoom::finishInactiveRecord(120);
 }
 
 ini_set('date.timezone','Asia/Shanghai');
