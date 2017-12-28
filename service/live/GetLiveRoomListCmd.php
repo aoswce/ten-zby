@@ -84,7 +84,7 @@ class GetLiveRoomListCmd extends TokenCmd
             $memberSize = InteractAvRoom::getCount($record['info']['roomnum']);
 			$record['info']['memsize'] = $memberSize;
 			if(empty($record['info']['cover'])){
-                $record['info']['cover'] = "/lib/img/cover/default.png";
+                $record['info']['cover'] = "lib/img/cover/default.png";
             }
             $rspData[] = $record;
         }
